@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import React, { Fragment } from "react";
 import './App.css';
+import CurrentWeatherInfos from './components/CurrentWeatherInfos';
+import CurrentWeatherDescription from './components/CurrentWeatherDescription';
+import CurrentWeatherTemperature from './components/CurrentWeatherTemperature';
+import CurrentWeatherIcon from './components/CurrentWeatherIcon';
+import CurrentWeatherZone from './components/CurrentWeatherZone';
+import DailyForecast  from './components/DailyForecast';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Fragment>
+    <div>
+      <div className="main-section">
+        <div className="main-section-container">
+          <div class="location">
+            <a href="#"  id="location">
+              Use Your Location
+            </a>
+          </div>
+          <CurrentWeatherIcon className="main-section-icon"/>
+          <CurrentWeatherTemperature className="temperature" />
+          <CurrentWeatherZone/>
+          <CurrentWeatherDescription className="description"/>
+          <CurrentWeatherInfos/>
+             
+        </div>
+      </div>
+    
+    <footer>
+    <div className="footer-container">
+     <h2>5-Day Forecast</h2>
+     <div class="days-forecast">
+      <DailyForecast />
+      </div>
+      </div>
+    </footer>
+  </div>
+  </Fragment>
   );
 }
 
